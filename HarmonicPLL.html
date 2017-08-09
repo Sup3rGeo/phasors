@@ -39,7 +39,7 @@ canvas {
 }
 
 span {
-		width: 80px;
+		width: 160px;
 		margin: 0;
 		padding: 0;
 		display: inline-block;
@@ -74,11 +74,11 @@ input[type="range"] {
 				<input name="harm1n" type="number" value="2">
 		</div>
 		<div>
-				<span>1st Harmonic Mag (n)</span>
+				<span>1st Harmonic Mag (pu)</span>
 				<input name="harm1mag" type="number" value="0" min="0" step="0.1">
 		</div>
 		<div>
-				<span>1st Harmonic Phase (n)</span>
+				<span>1st Harmonic Phase (deg)</span>
 				<input name="harm1ph" type="range" min="0" max="360" value="0" step="1" oninput="this.form.harm1phAmount.value=this.value" />
 				<input type="number" name="harm1phAmount" min="0" max="360" value="0" oninput="this.form.harm1ph.value=this.value" />
 		</div>		
@@ -87,12 +87,13 @@ input[type="range"] {
 				<input name="harm2n" type="number" value="5">
 		</div>
 		<div>
-				<span>2nd Harmonic Mag (n)</span>
+				<span>2nd Harmonic Mag (pu)</span>
 				<input name="harm2mag" type="number" value="0" min="0" step="0.1">
 		</div>
 		<div>
-				<span>2st Harmonic Phase (n)</span>
-				<input name="harm2ph" type="range" min="0" max="360" value="0" step="1">
+				<span>2st Harmonic Phase (deg)</span>
+				<input name="harm2ph" type="range" min="0" max="360" value="0" step="1" oninput="this.form.harm2phAmount.value=this.value">
+				<input type="number" name="harm2phAmount" min="0" max="360" value="0" oninput="this.form.harm2ph.value=this.value" />				
 		</div>			
 		<div>
 				<input name="circle" type="checkbox" checked="checked">Show Harmonic Locus<br>
@@ -105,10 +106,13 @@ input[type="range"] {
 				<input type="radio" name="plot" value="waveAlphaBeta" checked>Waveform - alpha(red), beta(green)<br>
 				<input type="radio" name="plot" value="waveAbc">Waveform - a(red), b(green), c(blue)<br>
 				<input type="radio" name="plot" value="magnitude">Phasor Magnitude<br>
-				<input type="radio" name="plot" value="angle">Phasor Angle - stationary reference (axis)<br>
+				<input type="radio" name="plot" value="angle">Phasor Angle - stationary reference<br>
 				<input type="radio" name="plot" value="anglediff">Phasor Angle - synchronous reference (fundamental)<br>
 		</div>
-		</form>
+		</form><br>
+		Developed by Victor Maryama, based on code by André Michelle (https://codepen.io/andremichelle/pen/LVzMRz)
+
 </div>
 <script src="HarmonicPLL.js"></script>
-</body></html>
+</body>
+</html>
